@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial';
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+    header {
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .workarea {
+      position: relative;
+      width: 100%;
+      height: 85%;
+      padding: 5% 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    footer {
+      height: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    #dropzone {
+      width: 40%;
+      height: 50%;
+      border: 10px dotted black;
+      position: relative;
+      margin: 0 auto;
+      transition: 0.2s;
+    }
+    #result {
+      width: 100%;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    #file {
+      display: none;
+    }
+    .loadLink {
+      font-family: 'Lobster';
+      cursor: pointer;
+      color: red;
+      pointer-events: all;
+    }
+    .text {
+      font-family: 'Lobster';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      text-align: center;
+      font-size: 1.5rem;
+      transition: 0.2s;
+      pointer-events: none;
+    }
+    #dropzone.active {
+      border: 5px solid rgba(0, 0, 0, 0.3);
+    }
+    #dropzone.active .text {
+      opacity: 0.3
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лучший инструмент для дизайнера</h1>
+  </header>
+  <div class="workarea">
+    <div id="dropzone">
+      <div class="text">
+        Перетащи или <label class="loadLink" for="file">загрузи</label> картинку, чтобы узнать, насколько она красная.
+      </div>
+    </div>
+    <div id="result"></div>
+    <input type="file" id="file" />
+  </div>
+  <footer>
+    <div class="version">version 0.0.1</div>
+    <div class="inspiration">Inspired by <a href="https://github.com/javierbyte/img2css">this dude</a></div>
+  </footer>
+  <script src="./index.js"></script>
+</body>
+</html>
